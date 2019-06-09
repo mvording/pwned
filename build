@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ $# -eq 1 ] 
+  then
+    if [ $1 = "arm" ] || [ $1 = "pi" ]; then
+      # target raspberry pi - arm
+      echo "building for pi/arm"
+      env GOOS=linux GOARCH=arm GOARM=7 go build 
+    fi 
+    if [ $1 = "server" ] || [ $1 = "amd64" ] || [ $1 = "intel" ]; then
+      # target intel/amd servers from mac
+      echo "building for intel/amd servers"
+      env GOOS=linux GOARCH=amd64 go build 
+    fi
+else
+  # default
+  go build  
+fi
+
