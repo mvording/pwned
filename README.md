@@ -22,8 +22,11 @@ when specifying the `-password` flag, it will return the number of times the pas
 #### For batch requests
 
 You can specify a set of accounts or passwords by specifying the `-mode` flag.
+
 `-mode=breach` breach search
+
 `-mode=password` password count search
+
 To specify a payload you can either redirect/pipe, or explicitly provide a filename with `-file="path/to/file.txt"`
 
 
