@@ -15,6 +15,9 @@ import (
 
 // PasswordCount : Retrieve count of password usages
 func PasswordCount(passwords []string) []model.Password {
+	if len(passwords) < 1 {
+		return []model.Password{}
+	}
 	response := make([]model.Password, len(passwords))
 
 	var results int
